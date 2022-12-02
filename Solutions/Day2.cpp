@@ -13,27 +13,30 @@ int score;
 int actualScore;
 
 void Day2::ReadFile() {
-    std::map<std::pair<char, char>, int> winningTable;
-    std::map<std::pair<char, char>, int> actualTable;
-    winningTable[std::pair('A', 'X')] = 4;
-    winningTable[std::pair('A', 'Y')] = 8;
-    winningTable[std::pair('A', 'Z')] = 3;
-    winningTable[std::pair('B', 'X')] = 1;
-    winningTable[std::pair('B', 'Y')] = 5;
-    winningTable[std::pair('B', 'Z')] = 9;
-    winningTable[std::pair('C', 'X')] = 7;
-    winningTable[std::pair('C', 'Y')] = 2;
-    winningTable[std::pair('C', 'Z')] = 6;
+    std::cout << "Day 2" << std::endl;
+    std::map<std::pair<char, char>, int> winningTable = {
+            {{'A', 'X'}, 4},
+            {{'A', 'Y'}, 8},
+            {{'A', 'Z'}, 3},
+            {{'B', 'X'}, 1},
+            {{'B', 'Y'}, 5},
+            {{'B', 'Z'}, 9},
+            {{'C', 'X'}, 7},
+            {{'C', 'Y'}, 2},
+            {{'C', 'Z'}, 6}
+    };
 
-    actualTable[std::pair('A', 'X')] = 3;
-    actualTable[std::pair('A', 'Y')] = 4;
-    actualTable[std::pair('A', 'Z')] = 8;
-    actualTable[std::pair('B', 'X')] = 1;
-    actualTable[std::pair('B', 'Y')] = 5;
-    actualTable[std::pair('B', 'Z')] = 9;
-    actualTable[std::pair('C', 'X')] = 2;
-    actualTable[std::pair('C', 'Y')] = 6;
-    actualTable[std::pair('C', 'Z')] = 7;
+    std::map<std::pair<char, char>, int> actualTable = {
+            {{'A', 'X'}, 3},
+            {{'A', 'Y'}, 4},
+            {{'A', 'Z'}, 8},
+            {{'B', 'X'}, 1},
+            {{'B', 'Y'}, 5},
+            {{'B', 'Z'}, 9},
+            {{'C', 'X'}, 2},
+            {{'C', 'Y'}, 6},
+            {{'C', 'Z'}, 7}
+    };
 
     std::ifstream fin("../input/Day2.txt");
     std::string ratio;

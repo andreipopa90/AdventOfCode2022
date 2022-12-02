@@ -19,6 +19,7 @@ void Day1::Solution2() {
 }
 
 void Day1::ReadFile() {
+    std::cout << "Day 1" << std::endl;
     std::ifstream fin("../input/Day1.txt");
     std::string ratio;
     int elfRatio = 0;
