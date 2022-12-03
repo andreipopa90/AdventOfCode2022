@@ -7,14 +7,13 @@
 #include "map"
 #include "iostream"
 
-
-
 int score;
 int actualScore;
 
 void Day2::ReadFile() {
     std::cout << "Day 2" << std::endl;
-    std::map<std::pair<char, char>, int> winningTable = {
+    std::ifstream fin("../input/Day2.txt");
+    std::map<std::pair<char, char>, int> guessedTable = {
             {{'A', 'X'}, 4},
             {{'A', 'Y'}, 8},
             {{'A', 'Z'}, 3},
@@ -37,36 +36,34 @@ void Day2::ReadFile() {
             {{'C', 'Y'}, 6},
             {{'C', 'Z'}, 7}
     };
-
-    std::ifstream fin("../input/Day2.txt");
-    std::string ratio;
     char A, B;
     score = 0;
     actualScore = 0;
     if (fin.is_open()){
         while (fin >> A >> B) {
-            std::pair match(A, B);
-            score += winningTable[match];
-            actualScore += actualTable[match];
+            score += guessedTable[{A, B}];
+            actualScore += actualTable[{A, B}];
         }
     }
     fin.close();
 }
 
 void Day2::Solution1() {
-    //A, X - rock - 1pt
-    //B, Y - paper - 2pt
-    //C, Z - scissor - 3pt
-    //Win - 6, Lost - 0, Draw - 3
+    // A, X - rock - 1pt
+    // B, Y - paper - 2pt
+    // C, Z - scissor - 3pt
+    // Win - 6
+    // Lost - 0
+    // Draw - 3
     std::cout << "Solution 1 for Day 2 is: " << score << std::endl;
 }
 
 void Day2::Solution2() {
-    //X - Loss - 0
-    //Y - Draw - 3
-    //Z - Win - 6
-    //A- rock - 1pt
-    //B- paper - 2pt
-    //C- scissor - 3pt
+    // X - Loss - 0
+    // Y - Draw - 3
+    // Z - Win - 6
+    // A - rock - 1pt
+    // B - paper - 2pt
+    // C - scissor - 3pt
     std::cout << "Solution 2 for Day 2 is: " << actualScore << std::endl;
 }
