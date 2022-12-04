@@ -32,15 +32,14 @@ void Day3::Solution1() {
     std::map<char, int> frequencies;
     int score = 0;
 
-    for(int i = 0; i < compartments.size(); i++) {
-        for (int j = 0; j < compartments[i].first.length(); j++) {
-            char character = compartments[i].first[j];
+    for(auto& compartment : compartments) {
+
+        for (char character : compartment.first) {
             if (!frequencies.count(character))
                 frequencies[character] = 1;
         }
 
-        for (int j = 0; j < compartments[i].second.length(); j++) {
-            char character = compartments[i].second[j];
+        for (char character : compartment.second) {
             if (frequencies.count(character))
                 frequencies[character] = 2;
         }
@@ -49,7 +48,6 @@ void Day3::Solution1() {
             if (val == 2 && 'a' <= key && key <= 'z') {
                 score += key - 96;
             }
-
             if (val == 2 && 'A' <= key && key <= 'Z') {
                 score += key - 38;
             }
@@ -69,18 +67,17 @@ void Day3::Solution2() {
 
     for(int i = 0; i < compartments2.size(); i += 3) {
 
-        for (int j = 0; j < compartments2[i].length(); j++) {
-            char character = compartments2[i][j];
+        for (char character : compartments2[i]) {
             if (!frequencies.count(character))
                 frequencies[character] = 1;
         }
-        for (int j = 0; j < compartments2[i + 1].length(); j++) {
-            char character = compartments2[i + 1][j];
+
+        for (char character : compartments2[i + 1]) {
             if (frequencies.count(character))
                 frequencies[character] = 2;
         }
-        for (int j = 0; j < compartments2[i + 2].length(); j++) {
-            char character = compartments2[i + 2][j];
+
+        for (char character : compartments2[i + 2]) {
             if (frequencies.count(character) && frequencies[character] == 2)
                 frequencies[character] = 3;
         }
@@ -89,7 +86,6 @@ void Day3::Solution2() {
             if (val == 3 && 'a' <= key && key <= 'z') {
                 score += key - 96;
             }
-
             if (val == 3 && 'A' <= key && key <= 'Z') {
                 score += key - 38;
             }

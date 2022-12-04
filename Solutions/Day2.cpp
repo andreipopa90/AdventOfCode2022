@@ -55,7 +55,7 @@ void Day2::Solution1() {
     // Win - 6
     // Lost - 0
     // Draw - 3
-    std::cout << "Solution 1 for Day 2 is: " << score << std::endl;
+    std::cout << "Solution 1 of Day 2 is: " << score << std::endl;
 }
 
 void Day2::Solution2() {
@@ -65,5 +65,5 @@ void Day2::Solution2() {
     // A - rock - 1pt
     // B - paper - 2pt
     // C - scissor - 3pt
-    std::cout << "Solution 2 for Day 2 is: " << actualScore << std::endl;
+    std::cout << "Solution 2 of Day 2 is: " << actualScore << std::endl;
 }
