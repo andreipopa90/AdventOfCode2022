@@ -2,6 +2,7 @@
 #include "Solutions/Day2.h"
 #include "Solutions/Day3.h"
 #include "Solutions/Day4.h"
+#include "Solutions/Day5.h"
 
 int main(){
     Day1 day1;
@@ -20,7 +21,10 @@ int main(){
     day3.Solution2();
 
     Day4 day4;
-    day4.ReadFile();
-    day4.Solution1();
-    day4.Solution2();
+    day4.Solution();
+
+    Day5 day5;
+    day5.ReadFile();
+    day5.Solution1();
+    day5.Solution2();
 }

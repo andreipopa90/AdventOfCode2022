@@ -12,4 +12,6 @@ add_executable(AdventOfCode2022
         Solutions/Day3.cpp
         Solutions/Day3.h
         Solutions/Day4.cpp
-        Solutions/Day4.h)
+        Solutions/Day4.h
+        Solutions/Day5.cpp
+        Solutions/Day5.h)
