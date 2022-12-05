@@ -21,6 +21,7 @@ void Day5::ReadFile() {
 
     std::ifstream fin("../Input/Day5.txt");
 
+    // Initialize crates
     for (int i = 1; i <= CRATES; i++) {
         std::vector<char> cratesi;
         crates.push_back(cratesi);
