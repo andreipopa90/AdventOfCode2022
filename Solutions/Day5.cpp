@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "Day5.h"
 #include "fstream"
 #define CRATES 9
@@ -30,12 +31,11 @@ void Day5::ReadFile() {
 
     for(int i = 0; i < LINES; i++){
         std::getline(fin, line);
-        for (int j = 0; j <= line.length(); j++) {
+        for (int j = 1; j < line.length(); j += 4) {
             if ('A' <= line[j] && line[j] <= 'Z'){
                 crates[j / 4].push_back(line[j]);
                 crates2[j / 4].push_back(line[j]);
             }
-
         }
     }
     for (int i = 0; i < CRATES; i++){
