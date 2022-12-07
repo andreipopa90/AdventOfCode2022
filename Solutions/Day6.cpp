@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include <map>
+#include <set>
 #include <vector>
 #include <algorithm>
 #include "Day6.h"
@@ -16,25 +16,24 @@ void Day6::ReadFile() {
     std::cout << "Day 6" << std::endl;
     std::ifstream fin("../Input/Day6.txt");
     std::getline(fin, dataStream);
-
+    fin.close();
 }
 
 void Day6::Solution1() {
 
-    bool found = false;
-    std::vector<char> visited;
+    bool found;
+    std::set<char> visited;
     int foundIndex = 0;
 
-    for (int i = 0; i < dataStream.size() - 4 && !found; i++) {
+    for (int i = 0; i < dataStream.size() - 4; i++) {
         std::string subString = dataStream.substr(i, 4);
-        visited.clear();
         found = true;
-        for (int j = 0; j < subString.size(); j++) {
-            if (std::count(visited.begin(), visited.end(), subString[j])) {
+        for (char & j : subString) {
+            if (!visited.insert(j).second) {
                 found = false;
+                visited.clear();
                 break;
             }
-            visited.push_back(subString[j]);
         }
         if (found) {
             foundIndex = i + 4;
@@ -47,20 +46,19 @@ void Day6::Solution1() {
 
 void Day6::Solution2() {
 
-    bool found = false;
-    std::vector<char> visited;
+    bool found;
+    std::set<char> visited;
     int foundIndex = 0;
 
-    for (int i = 0; i < dataStream.size() - 14 && !found; i++) {
+    for (int i = 0; i < dataStream.size() - 14; i++) {
         std::string subString = dataStream.substr(i, 14);
-        visited.clear();
         found = true;
-        for (int j = 0; j < subString.size(); j++) {
-            if (std::count(visited.begin(), visited.end(), subString[j])) {
+        for (char & j : subString) {
+            if (!visited.insert(j).second) {
                 found = false;
+                visited.clear();
                 break;
             }
-            visited.push_back(subString[j]);
         }
         if (found) {
             foundIndex = i + 14;
