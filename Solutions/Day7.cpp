@@ -4,17 +4,25 @@
 
 #include <iostream>
 #include <map>
+#include <utility>
 #include "Day7.h"
 #include "fstream"
 #include "sstream"
 #include "vector"
 
 struct Folder{
-    int size;
-    std::vector<Folder*> next;
-    Folder *prev;
+    int size = 0;
+    std::vector<Folder*> next = static_cast<std::vector<Folder *>>(0);
+    Folder *prev = nullptr;
     std::string name;
+    Folder(Folder* previous, std::string name) {
+        this->prev = previous;
+        this->name = std::move(name);
+    }
+
 }*root;
+
+int sizeSum, directorySizeToDelete;
 
 Folder* FindFolder(Folder* folder, const std::string& folderName) {
     if (folder->name == folderName && folderName == "/") return root;
@@ -24,20 +32,12 @@ Folder* FindFolder(Folder* folder, const std::string& folderName) {
     return nullptr;
 }
 
-void FindSizes(Folder* folder, int &size) {
+void FindSizes(Folder* folder, int &lowestSizeSum, int minimumToDelete, int& sizeToDelete) {
     for (auto& i: folder->next) {
-        size = i->size <= 100000 ? size + i->size : size;
-        FindSizes(i, size);
-    }
-}
-
-void FindHighestSizes(Folder* folder, int minimumToDelete, int& sizeToDelete) {
-
-    for (auto& i: folder->next) {
+        lowestSizeSum = i->size <= 100000 ? lowestSizeSum + i->size : lowestSizeSum;
         sizeToDelete = i->size >= minimumToDelete && i->size < sizeToDelete ? i->size : sizeToDelete;
-        FindHighestSizes(i, minimumToDelete, sizeToDelete);
+        FindSizes(i, lowestSizeSum, minimumToDelete, sizeToDelete);
     }
-
 }
 
 void Day7::ReadFile() {
@@ -46,70 +46,51 @@ void Day7::ReadFile() {
     std::ifstream fin("../Input/Day7.txt");
     std::string inputLine, inputToken;
 
-    root = new Folder;
-    root->size = 0;
-    root->name = "/";
-    root->prev = nullptr;
-    root->next = static_cast<std::vector<Folder *>>(0);
+    root = new Folder(nullptr, "/");
     Folder* currentFolder = root;
 
     while (std::getline(fin, inputLine)) {
-        std::stringstream splitter(inputLine);
-
         // Don't care about ls
         if (inputLine[0] == '$' && inputLine.find("cd") != -1) {
-            while(std::getline(splitter, inputToken, ' ')) {}
+            // Folder name is at the end
+            inputToken = inputLine.substr(inputLine.find_last_of(' ') + 1, inputLine.size());
             // Go down or up one level
-            if (inputToken != "..")
-                currentFolder = FindFolder(currentFolder, inputToken);
-            else {
-                currentFolder = currentFolder->prev;
-            }
+            currentFolder = inputToken == ".." ? currentFolder->prev : FindFolder(currentFolder, inputToken);
         }
 
         // Add new directory to the folder structure
         else if (inputLine.find("dir") != -1) {
-            while(std::getline(splitter, inputToken, ' ')) {}
-            auto* newFolder = new Folder;
-            newFolder->name = inputToken;
-            newFolder->prev = currentFolder;
-            newFolder->next = static_cast<std::vector<Folder *>>(0);
-            newFolder->size = 0;
+            // Folder name is at the end
+            inputToken = inputLine.substr(inputLine.find_last_of(' ') + 1, inputLine.size());
+            auto* newFolder = new Folder(currentFolder, inputToken);
             currentFolder->next.push_back(newFolder);
         }
 
         // Update size of directory and all sizes until the root
         else if ('0' <= inputLine[0] && inputLine[0] <= '9') {
-            std::getline(splitter, inputToken, ' ');
+            // Filesize is at the beginning
+            inputToken = inputLine.substr(0, inputLine.find(' '));
             currentFolder->size += stoi(inputToken);
             Folder* iterator = currentFolder;
+            // Update the sizes of the parent folders
             while (iterator->name != "/") {
                 iterator = iterator->prev;
-                iterator->size += stoll(inputToken);
+                iterator->size += stoi(inputToken);
             }
         }
-        // Clear the string stream
-        splitter.clear();
-        splitter.str(std::string());
     }
 
     fin.close();
 }
 
 void Day7::Solution1() {
-
-    int size = 0;
-    FindSizes(root, size);
-    std::cout << "Solution 1 of Day 7 is: " << size << std::endl;
-
+    int minimumToDelete = 30000000 - 70000000 + root->size;
+    // Start from root cause that is the biggest one at first and would free the most space
+    directorySizeToDelete = root->size;
+    FindSizes(root, sizeSum, minimumToDelete, directorySizeToDelete);
+    std::cout << "Solution 1 of Day 7 is: " << sizeSum << std::endl;
 }
 
 void Day7::Solution2() {
-    int maximumSize = 70000000;
-    int minimumNeeded = 30000000;
-    int minimumToDelete = minimumNeeded - maximumSize + root->size;
-    // Start from root cause that is the biggest one at first and would free the most space
-    int directorySizeToDelete = root->size;
-    FindHighestSizes(root, minimumToDelete, directorySizeToDelete);
     std::cout << "Solution 2 of Day 7 is: " << directorySizeToDelete << std::endl;
 }
