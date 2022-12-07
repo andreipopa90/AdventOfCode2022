@@ -34,8 +34,7 @@ void FindSizes(Folder* folder, int &size) {
 void FindHighestSizes(Folder* folder, int minimumToDelete, int& sizeToDelete) {
 
     for (auto& i: folder->next) {
-        if (i->size >= minimumToDelete && i->size < sizeToDelete)
-            sizeToDelete = i->size;
+        sizeToDelete = i->size >= minimumToDelete && i->size < sizeToDelete ? i->size : sizeToDelete;
         FindHighestSizes(i, minimumToDelete, sizeToDelete);
     }
 
