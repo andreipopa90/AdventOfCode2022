@@ -1,10 +1,5 @@
-//
-// Created by popaa on 06/12/2022.
-//
-
 #include <iostream>
 #include <set>
-#include <vector>
 #include <algorithm>
 #include "Day6.h"
 #include "fstream"

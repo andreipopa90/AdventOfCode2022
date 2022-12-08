@@ -9,8 +9,7 @@
 class Day8 {
 public:
     void ReadFile();
-    void Solution1();
-    void Solution2();
+    void Solution();
 };
 
 

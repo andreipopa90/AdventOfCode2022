@@ -1,7 +1,3 @@
-//
-// Created by popaa on 04/12/2022.
-//
-
 #include <iostream>
 #include <vector>
 #include <algorithm>

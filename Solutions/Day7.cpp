@@ -1,13 +1,5 @@
-//
-// Created by popaa on 06/12/2022.
-//
-
-#include <iostream>
-#include <map>
-#include <utility>
 #include "Day7.h"
 #include "fstream"
-#include "sstream"
 #include "vector"
 
 struct Folder{
@@ -42,7 +34,7 @@ void FindSizes(Folder* folder, int &lowestSizeSum, int minimumToDelete, int& siz
 
 void Day7::ReadFile() {
 
-    std::cout << "Day 7" << std::endl;
+    printf("Day 7\n");
     std::ifstream fin("../Input/Day7.txt");
     std::string inputLine, inputToken;
 
@@ -88,9 +80,9 @@ void Day7::Solution1() {
     // Start from root cause that is the biggest one at first and would free the most space
     directorySizeToDelete = root->size;
     FindSizes(root, sizeSum, minimumToDelete, directorySizeToDelete);
-    std::cout << "Solution 1 of Day 7 is: " << sizeSum << std::endl;
+    printf("Solution 1 of Day 7 is: %d\n", sizeSum);
 }
 
 void Day7::Solution2() {
-    std::cout << "Solution 2 of Day 7 is: " << directorySizeToDelete << std::endl;
+    printf("Solution 2 of Day 7 is: %d\n", directorySizeToDelete);
 }

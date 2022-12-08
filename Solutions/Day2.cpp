@@ -1,7 +1,3 @@
-//
-// Created by popaa on 01/12/2022.
-//
-
 #include "Day2.h"
 #include "fstream"
 #include "map"

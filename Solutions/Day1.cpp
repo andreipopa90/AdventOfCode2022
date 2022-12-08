@@ -1,7 +1,3 @@
-//
-// Created by popaa on 01/12/2022.
-//
-
 #include <iostream>
 #include <algorithm>
 #include "Day1.h"
@@ -26,7 +22,7 @@ void Day1::ReadFile() {
     int counter = 0;
     if (fin.is_open()){
         while (std::getline(fin, ratio)) {
-            if (ratio == "") {
+            if (ratio[0] == '\0') {
                 ratios.push_back(elfRatio);
                 elfRatio = 0;
             }
