@@ -3,6 +3,8 @@
 #include "Day1.h"
 #include "fstream"
 
+std::vector<int> ratios;
+
 void Day1::Solution1() {
     int maxRatio = *std::max_element(std::begin(ratios), std::end(ratios));
     std::cout << "Solution 1 of Day 1 is: " << maxRatio << std::endl;

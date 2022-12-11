@@ -5,7 +5,6 @@
 
 class Day1 {
 public:
-    std::vector<int> ratios;
     void Solution1();
     void Solution2();
     void ReadFile();
