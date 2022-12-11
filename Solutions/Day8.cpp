@@ -29,6 +29,8 @@ void Day8::ReadFile() {
         }
     }
 
+    fin.close();
+
 }
 
 std::pair<bool, int> CheckView(int startX, int startY) {

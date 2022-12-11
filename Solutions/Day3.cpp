@@ -3,7 +3,6 @@
 #include <map>
 #include "Day3.h"
 #include "fstream"
-#include "string"
 
 std::vector<std::pair<std::string, std::string>> compartments;
 std::vector<std::string> compartments2;
