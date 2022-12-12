@@ -45,10 +45,10 @@ void Day11::ReadFile() {
         fscanf(input, " Test: divisible by %d\n", &test);
         monkey.test = test;
 
-        fscanf(input, " If true: throw to monkey %d\n", &monkeyTrue);
+        fscanf(input, "  If true: throw to monkey %d\n", &monkeyTrue);
         monkey.trueMonkeyIndex = monkeyTrue;
 
-        fscanf(input, " If false: throw to monkey %d\n", &monkeyFalse);
+        fscanf(input, "  If false: throw to monkey %d\n", &monkeyFalse);
         monkey.falseMonkeyIndex = monkeyFalse;
         monkeys[index] = monkey;
     }
