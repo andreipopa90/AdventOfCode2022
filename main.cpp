@@ -1,4 +1,5 @@
 #include <iostream>
+#include "chrono"
 #include "Solutions/Day1.h"
 #include "Solutions/Day2.h"
 #include "Solutions/Day3.h"
@@ -7,7 +8,6 @@
 #include "Solutions/Day6.h"
 #include "Solutions/Day7.h"
 #include "Solutions/Day8.h"
-#include "chrono"
 #include "Solutions/Day9.h"
 #include "Solutions/Day10.h"
 #include "Solutions/Day11.h"
