@@ -7,7 +7,7 @@ int score;
 int actualScore;
 
 void Day2::ReadFile() {
-    std::cout << "Day 2" << std::endl;
+    std::cout << "Day 2" << '\n';
     std::ifstream fin("../input/Day2.txt");
     std::map<std::pair<char, char>, int> guessedTable = {
             {{'A', 'X'}, 4},
@@ -51,7 +51,7 @@ void Day2::Solution1() {
     // Win - 6
     // Lost - 0
     // Draw - 3
-    std::cout << "Solution 1 of Day 2 is: " << score << std::endl;
+    std::cout << "Solution 1 of Day 2 is: " << score << '\n';
 }
 
 void Day2::Solution2() {
@@ -61,5 +61,5 @@ void Day2::Solution2() {
     // A - rock - 1pt
     // B - paper - 2pt
     // C - scissor - 3pt
-    std::cout << "Solution 2 of Day 2 is: " << actualScore << std::endl;
+    std::cout << "Solution 2 of Day 2 is: " << actualScore << '\n';
 }

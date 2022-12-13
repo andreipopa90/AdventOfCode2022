@@ -124,7 +124,7 @@ void Day11::Solution1() {
     }
 
     std::sort(inspected, inspected + MONKEYS);
-    std::cout << "Solution 1 of Day 11 is: " << inspected[MONKEYS - 1] * inspected[MONKEYS - 2] << std::endl;
+    std::cout << "Solution 1 of Day 11 is: " << inspected[MONKEYS - 1] * inspected[MONKEYS - 2] << '\n';
 
 }
 
@@ -166,6 +166,6 @@ void Day11::Solution2() {
     }
     std::sort(inspected, inspected + MONKEYS);
 
-    std::cout << "Solution 2 of Day 11 is: " << inspected[MONKEYS - 1] * inspected[MONKEYS - 2] << std::endl;
+    std::cout << "Solution 2 of Day 11 is: " << inspected[MONKEYS - 1] * inspected[MONKEYS - 2] << '\n';
 
 }

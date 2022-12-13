@@ -23,7 +23,7 @@ std::pair<int, int> start, end, dir[4]{
 
 void Day12::ReadFile() {
 
-    std::cout << "Day 12" << std::endl;
+    std::cout << "Day 12" << '\n';
     std::ifstream fin("../Input/Day12.txt");
 
     for (int i = 0; i < ROW; i++) {
@@ -75,7 +75,7 @@ void Day12::Solution1() {
 
     bfs(1, roadSize, start);
 
-    std::cout << "Solution 1 of Day 12 is: " << roadSize[end] << std::endl;
+    std::cout << "Solution 1 of Day 12 is: " << roadSize[end] << '\n';
 }
 
 void Day12::Solution2() {
@@ -91,6 +91,6 @@ void Day12::Solution2() {
         }
     }
 
-    std::cout << "Solution 2 of Day 12 is: " << minimumRoad << std::endl;
+    std::cout << "Solution 2 of Day 12 is: " << minimumRoad << '\n';
 
 }

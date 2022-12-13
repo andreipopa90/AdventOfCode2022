@@ -7,17 +7,17 @@ std::vector<int> ratios;
 
 void Day1::Solution1() {
     int maxRatio = *std::max_element(std::begin(ratios), std::end(ratios));
-    std::cout << "Solution 1 of Day 1 is: " << maxRatio << std::endl;
+    std::cout << "Solution 1 of Day 1 is: " << maxRatio << '\n';
 }
 
 void Day1::Solution2() {
     std::sort(ratios.begin(), ratios.end(), std::greater<int>());
     int topThree = ratios[0] + ratios[1] + ratios[2];
-    std::cout << "Solution 2 of Day 1 is: " << topThree << std::endl;
+    std::cout << "Solution 2 of Day 1 is: " << topThree << '\n';
 }
 
 void Day1::ReadFile() {
-    std::cout << "Day 1" << std::endl;
+    std::cout << "Day 1" << '\n';
     std::ifstream fin("../input/Day1.txt");
     std::string ratio;
     int elfRatio = 0;

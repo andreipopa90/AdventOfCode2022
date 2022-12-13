@@ -8,7 +8,7 @@ std::string dataStream;
 
 void Day6::ReadFile() {
 
-    std::cout << "Day 6" << std::endl;
+    std::cout << "Day 6" << '\n';
     std::ifstream fin("../Input/Day6.txt");
     std::getline(fin, dataStream);
     fin.close();
@@ -36,7 +36,7 @@ void Day6::Solution1() {
         }
     }
 
-    std::cout << "Solution 1 of Day 6 is: " << foundIndex << std::endl;
+    std::cout << "Solution 1 of Day 6 is: " << foundIndex << '\n';
 }
 
 void Day6::Solution2() {
@@ -61,6 +61,6 @@ void Day6::Solution2() {
         }
     }
 
-    std::cout << "Solution 2 of Day 6 is: " << foundIndex << std::endl;
+    std::cout << "Solution 2 of Day 6 is: " << foundIndex << '\n';
 
 }

@@ -20,7 +20,7 @@ bool ManhattanDistance(std::pair<int, int> head, std::pair<int, int> tail) {
 
 void Day9::ReadFile() {
 
-    std::cout << "Day 9" <<std::endl;
+    std::cout << "Day 9" <<'\n';
     std::ifstream fin("../Input/Day9.txt");
     std::set<std::pair<int, int>> tailPositions;
     std::set<std::pair<int, int>> longTailPositions;
@@ -62,7 +62,7 @@ void Day9::ReadFile() {
 
     fin.close();
 
-    std::cout << "Solution 1 of Day 9 is: " << tailPositions.size() << std::endl;
-    std::cout << "Solution 2 of Day 9 is: " << longTailPositions.size() << std::endl;
+    std::cout << "Solution 1 of Day 9 is: " << tailPositions.size() << '\n';
+    std::cout << "Solution 2 of Day 9 is: " << longTailPositions.size() << '\n';
 
 }

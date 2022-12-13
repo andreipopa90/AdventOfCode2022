@@ -11,7 +11,7 @@ std::vector<std::vector<char>> crates2;
 
 void Day5::ReadFile() {
 
-    std::cout << "Day 5" << std::endl;
+    std::cout << "Day 5" << '\n';
 
     int amount, stack1, stack2;
     std::string line, move, from, to;
@@ -62,7 +62,7 @@ void Day5::Solution1() {
     for (int i = 0; i < CRATES; i++) {
         std::cout << crates[i].back();
     }
-    std::cout << std::endl;
+    std::cout << '\n';
 }
 
 void Day5::Solution2() {
@@ -71,5 +71,5 @@ void Day5::Solution2() {
     for (int i = 0; i < CRATES; i++) {
         std::cout << crates2[i].back();
     }
-    std::cout << std::endl;
+    std::cout << '\n';
 }

@@ -11,7 +11,7 @@ char** forest;
 
 void Day8::ReadFile() {
 
-    std::cout << "Day 8" << std::endl;
+    std::cout << "Day 8" << '\n';
 
     // Initialize forest
     forest = new char*[ROW];
@@ -79,7 +79,7 @@ void Day8::Solution() {
         }
     }
 
-    std::cout << "Solution 1 of Day 8 is: " << visible << std::endl;
-    std::cout << "Solution 2 of Day 8 is: " << maximumViewScore << std::endl;
+    std::cout << "Solution 1 of Day 8 is: " << visible << '\n';
+    std::cout << "Solution 2 of Day 8 is: " << maximumViewScore << '\n';
 
 }

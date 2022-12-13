@@ -41,13 +41,13 @@ void Day10::ReadFile() {
         }
     }
 
-    std::cout << "Solution 1 of Day 10 is: " << sum << std::endl;
-    std::cout << "Solution 2 of Day 10 is: PAPKFKEJ" << std::endl;
+    std::cout << "Solution 1 of Day 10 is: " << sum << '\n';
+    std::cout << "Solution 2 of Day 10 is: PAPKFKEJ" << '\n';
     for (auto & character : characters) {
         for (char j : character) {
             std::cout << j;
         }
-        std::cout << std::endl;
+        std::cout << '\n';
     }
 
 }

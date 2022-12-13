@@ -8,7 +8,7 @@ std::vector<std::pair<std::string, std::string>> compartments;
 std::vector<std::string> compartments2;
 
 void Day3::ReadFile() {
-    std::cout << "Day 3" << std::endl;
+    std::cout << "Day 3" << '\n';
     std::ifstream fin("../Input/Day3.txt");
     std::string items, item1, item2;
     if (fin.is_open()){
@@ -51,7 +51,7 @@ void Day3::Solution1() {
         frequencies.clear();
     }
 
-    std::cout << "Solution 1 of Day 3 is: " << score << std::endl;
+    std::cout << "Solution 1 of Day 3 is: " << score << '\n';
 
 }
 
@@ -89,6 +89,6 @@ void Day3::Solution2() {
         frequencies.clear();
     }
 
-    std::cout << "Solution 2 of Day 3 is: " << score << std::endl;
+    std::cout << "Solution 2 of Day 3 is: " << score << '\n';
 
 }

@@ -2,7 +2,7 @@
 #include "iostream"
 
 void Day4::Solution() {
-    std::cout << "Day 4" << std::endl;
+    std::cout << "Day 4" << '\n';
     FILE *fp = fopen("../Input/Day4.txt", "r");
     int start1, end1, start2, end2;
     int overlaps = 0;
@@ -18,6 +18,6 @@ void Day4::Solution() {
         }
     }
     fclose(fp);
-    std::cout << "Solution 1 of Day 4 is: " << overlaps << std::endl;
-    std::cout << "Solution 2 of Day 4 is: " << overlaps2 << std::endl;
+    std::cout << "Solution 1 of Day 4 is: " << overlaps << '\n';
+    std::cout << "Solution 2 of Day 4 is: " << overlaps2 << '\n';
 }
