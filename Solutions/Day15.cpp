@@ -10,7 +10,7 @@ std::vector<std::pair<int, int>> beacons(SENSORS);
 
 void Day15::ReadFile() {
 
-    scanf("Day 15\n");
+    printf("Day 15\n");
 
     FILE* fin = fopen("../Input/Day15.txt", "r");
     int sensorX, sensorY, beaconX, beaconY;

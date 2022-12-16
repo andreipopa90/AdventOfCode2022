@@ -15,6 +15,7 @@
 #include "Solutions/Day13.h"
 #include "Solutions/Day14.h"
 #include "Solutions/Day15.h"
+#include "Solutions/Day16.h"
 
 int main(){
     auto start = std::chrono::high_resolution_clock::now();
@@ -76,15 +77,20 @@ int main(){
     day13.Solution1();
     day13.Solution2();
 
-    Day14 day14;
-    day14.ReadFile();
-    day14.Solution1();
-    day14.Solution2();
+//    Day14 day14;
+//    day14.ReadFile();
+//    day14.Solution1();
+//    day14.Solution2();
 
     Day15 day15;
     day15.ReadFile();
     day15.Solution1();
-    day15.Solution2();
+//    day15.Solution2();
+
+    Day16 day16;
+    day16.ReadFile();
+    day16.Solution1();
+    day16.Solution2();
 
     auto stop = std::chrono::high_resolution_clock::now();
     long long duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count();
