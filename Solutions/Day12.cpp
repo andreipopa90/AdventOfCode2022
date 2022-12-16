@@ -41,6 +41,7 @@ void Day12::ReadFile() {
 
         }
     }
+    fin.close();
 
 }
 
